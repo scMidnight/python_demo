@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import requests,gzip
+import requests,random
+agent_list = ['Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3704.400 QQBrowser/10.4.3587.400']
 for i in range(5):
     params = {
         'ct': '24',
@@ -39,9 +40,9 @@ for i in range(5):
             'origin': 'https://y.qq.com',
             # 请求来源
             'referer': lyric_referer,
-            # 请求来源，携带的信息比“origin”更丰富，
-            'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3704.400 QQBrowser/10.4.3587.400',
-            # 标记了请求从什么设备，什么浏览器上发出
+            # 请求来源，携带的信息比“origin”更丰富，记录浏览器上次访问的URL
+            'user-agent': random.choice(agent_list)
+            # 标记了请求从什么设备，什么浏览器上发出，来标识请求的浏览器身份
         }
         lyric_params = {
             'nobase64': '1',
