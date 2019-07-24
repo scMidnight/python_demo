@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import time, os
+import time, os,sys
 # class jiqiren:
 #     def __init__(self, jName, mName):
 #         self.jName = jName
@@ -25,3 +25,5 @@ a = time.time()
 print(os.getcwd())
 print(os.listdir(os.getcwd()))
 print(dir(os))
+for i in sys.path:
+    print(i)
