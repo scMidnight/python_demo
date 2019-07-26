@@ -28,7 +28,8 @@ msg = MIMEText(text, "plain", "utf-8")
 # 邮件头信息
 msg['From'] = Header("per pa")
 msg['To'] = Header(to_addr)
-msg['Subject'] = Header("I LOVE YOU")
+# msg['Subject'] = Header("I LOVE YOU")
+msg['Subject'] = Header("爱你哟", 'utf-8')
 
 #如果端口是用SSL加密，请这样写代码，否则一般是smtp.SMTP()
 # server = smtp.SMTP(smtp_server, 465)
